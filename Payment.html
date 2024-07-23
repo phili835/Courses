@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2b2d79;
+        }
+        .container {
+            width: 90%;
+            margin: 50px auto;
+            background: #97b4f1;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .payment-option {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #403f8a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        input[type="submit"]:hover {
+            background: #24295e;
+        }
+        .card-details, .eft-details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Options</h2>
+        <form id="paymentForm">
+            <div class="payment-option">
+                <label>
+                    <input type="radio" name="paymentMethod" value="card" onclick="togglePaymentDetails()"> Pay with Card
+                </label>
+                <div class="card-details">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" name="cardName" placeholder="John Doe">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                    <label for="cardExpiry">Expiry Date</label>
+                    <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+                    <label for="cardCVC">CVC</label>
+                    <input type="number" id="cardCVC" name="cardCVC" placeholder="123">
+                </div>
+            </div>
+            <div class="payment-option">
+                <label>
+                    <input type="radio" name="paymentMethod" value="eft" onclick="togglePaymentDetails()"> Pay with EFT
+                </label>
+                <div class="eft-details">
+                   <label for="accountName">Account Holder Name</label>
+                    <input type="text" id="accountName" name="accountName" placeholder="John Doe">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" id="accountNumber" name="accountNumber" placeholder="123456789">
+                    <label for="bankName">Bank Name</label>
+                    <input type="text" id="bankName" name="bankName" placeholder="Bank Name">
+                    <label for="routingNumber">Routing Number</label>
+                    <input type="text" id="routingNumber" name="routingNumber" placeholder="123456789">
+                </div>
+            </div>
+            <input type="submit" value="Submit Payment">
+        </form>
+    </div>
+
+    <script>
+        function togglePaymentDetails() {
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const cardDetails = document.querySelector('.card-details');
+            const eftDetails = document.querySelector('.eft-details');
+            
+            if (paymentMethod === 'card') {
+                cardDetails.style.display = 'block';
+                eftDetails.style.display = 'none';
+            } else if (paymentMethod === 'eft') {
+                cardDetails.style.display = 'none';
+                eftDetails.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
