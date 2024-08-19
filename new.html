@@ -46,6 +46,11 @@
             color: red;
             margin-bottom: 15px;
         }
+        #redirectingMessage {
+            display: none;
+            color: red;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +79,7 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown"> Forex Trading Strategies Quiz</h1>
+                    <h1 class="display-3 text-white animated slideInDown">Advanced strategies</h1>
                 </div>
             </div>
         </div>
@@ -82,7 +87,7 @@
     <!-- Header End -->
 
     <div class="container quiz-container">
-        <h2>Quiz: Part 2</h2>
+        <h2>Quiz: Part 1</h2>
         <form id="quizForm" action="#" method="post">
             <!-- Question 1 -->
             <div class="question active" id="question1">
@@ -139,61 +144,6 @@
                     <option value="d">To enter trades when the price moves outside a defined level.</option>
                 </select>
             </div>
-            <!-- Question 6 -->
-            <div class="question" id="question6">
-                <label for="q6" class="form-label">6. What does day trading involve?</label>
-                <select id="q6" name="question6" class="form-select" required>
-                    <option value="" disabled selected>Select your answer</option>
-                    <option value="a">Making multiple trades within a single trading day.</option>
-                    <option value="b">Holding positions for several weeks or months.</option>
-                    <option value="c">Trading based on long-term market trends.</option>
-                    <option value="d">Using algorithms to execute trades based on predefined criteria.</option>
-                </select>
-            </div>
-            <!-- Question 7 -->
-            <div class="question" id="question7">
-                <label for="q7" class="form-label">7. What is fundamental analysis?</label>
-                <select id="q7" name="question7" class="form-select" required>
-                    <option value="" disabled selected>Select your answer</option>
-                    <option value="a">Analyzing economic indicators, financial statements, and market conditions to make trading decisions.</option>
-                    <option value="b">Using technical indicators and chart patterns to guide trades.</option>
-                    <option value="c">Making trades based on short-term market movements.</option>
-                    <option value="d">Employing algorithms to execute trades based on predefined criteria.</option>
-                </select>
-            </div>
-            <!-- Question 8 -->
-            <div class="question" id="question8">
-                <label for="q8" class="form-label">8. What is the main goal of risk management in trading?</label>
-                <select id="q8" name="question8" class="form-select" required>
-                    <option value="" disabled selected>Select your answer</option>
-                    <option value="a">To minimize potential losses and protect trading capital.</option>
-                    <option value="b">To capture short-term price movements.</option>
-                    <option value="c">To trade based on long-term market trends.</option>
-                    <option value="d">To use computer algorithms for executing trades.</option>
-                </select>
-            </div>
-            <!-- Question 9 -->
-            <div class="question" id="question9">
-                <label for="q9" class="form-label">9. What does trend following involve?</label>
-                <select id="q9" name="question9" class="form-select" required>
-                    <option value="" disabled selected>Select your answer</option>
-                    <option value="a">Making trades based on the direction of the prevailing market trend.</option>
-                    <option value="b">Trading on the basis of short-term price fluctuations.</option>
-                    <option value="c">Using algorithms to trade based on predefined criteria.</option>
-                    <option value="d">Minimizing risk through hedging strategies.</option>
-                </select>
-            </div>
-            <!-- Question 10 -->
-            <div class="question" id="question10">
-                <label for="q10" class="form-label">10. What is position trading?</label>
-                <select id="q10" name="question10" class="form-select" required>
-                    <option value="" disabled selected>Select your answer</option>
-                    <option value="a">Holding positions for a longer period based on fundamental analysis.</option>
-                    <option value="b">Making trades based on short-term market movements.</option>
-                    <option value="c">Trading using technical indicators to capture minor price movements.</option>
-                    <option value="d">Using algorithms to execute trades based on predefined criteria.</option>
-                </select>
-            </div>
             <div class="question-buttons">
                 <button type="button" id="prevBtn" class="btn btn-secondary">Previous</button>
                 <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
@@ -203,7 +153,8 @@
         <div id="result">
             <h3 id="resultMessage"></h3>
             <button id="tryAgainBtn" class="btn btn-secondary">Try Again</button>
-            <a href="Final.html" id="backToQuizBtn" class="btn btn-primary" style="display: none;">Complete Course</a>
+            <a href="Upgrade.html" id="backToQuizBtn" class="btn btn-primary" style="display: none;">Continue</a>
+            <div id="redirectingMessage">Redirecting...</div>
         </div>
     </div>
 
@@ -218,18 +169,13 @@
     <script src="js/main.js"></script>
     <script>
         let currentQuestion = 1;
-        const totalQuestions = 10;
+        const totalQuestions = 5;
         const correctAnswers = {
             question1: 'a',
             question2: 'a',
             question3: 'a',
             question4: 'a',
             question5: 'a',
-            question6: 'a',
-            question7: 'a',
-            question8: 'a',
-            question9: 'a',
-            question10: 'a'
         };
 
         function showQuestion(questionNumber) {
@@ -295,18 +241,26 @@
             document.getElementById('quizForm').style.display = 'none';
             document.getElementById('result').style.display = 'block';
 
-            const resultMessage = score >= 5 ? 'Complete! You passed the quiz! Your Score:'+score : 'Try Again! You did not pass the quiz.';
+            const resultMessage = score >= 3 ? 'Complete! You passed the quiz! Your Score:'+score : 'Try Again! You did not pass the quiz.';
             document.getElementById('resultMessage').innerText = resultMessage;
 
-            document.getElementById('tryAgainBtn').style.display = score < 5 ? 'inline-block' : 'none';
-            document.getElementById('backToQuizBtn').style.display = score >= 5 ? 'inline-block' : 'none';
+            document.getElementById('tryAgainBtn').style.display = score < 3 ? 'inline-block' : 'none';
+            document.getElementById('backToQuizBtn').style.display = score >= 3 ? 'inline-block' : 'none';
         });
 
         document.getElementById('tryAgainBtn').addEventListener('click', () => {
             location.reload(); // Reloads the page to restart the quiz
         });
 
+        document.getElementById('backToQuizBtn').addEventListener('click', () => {
+            document.getElementById('redirectingMessage').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = document.getElementById('backToQuizBtn').href;
+            }, 2000); // 2 seconds delay
+        });
+
         showQuestion(currentQuestion); // Initialize quiz
     </script>
 </body>
 </html>
+

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>InvestorGaurd - Advanced Forex Trading Strategies Part 1</title>
+    <title>InvestorGuard - eLearning HTML Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,6 +29,31 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<style>
+     
+        .button-container {
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+</style>
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -38,10 +63,11 @@
     </div>
     <!-- Spinner End -->
 
+
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>InvestorGaurd</h2>
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>InvestorGuard</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -66,58 +92,27 @@
     </nav>
     <!-- Navbar End -->
 
+
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Advanced Forex Trading Strategies</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <div class="container">
+        <div class="header">
+            <h1>Congratulations!</h1>
+            <p>You have successfully purchased the course.</p>
         </div>
-    </div>
-    <!-- Header End -->
-
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h6 class="section-title bg-white text-center text-primary px-3">Premium</h6>
-      
-    </div>
-
-    <div class="container">
-        <h1>Welcome!</h1>
-        <p>Welcome to the Advanced Forex Trading Strategies course. Get ready to equip yourself with all the necessary strategies in forex trading.</p>
-        <p>The following video gives an overview of everything that you are going to learn in this course:</p>
-       
+        <p>To complete your course and access the materials, please click the button below:</p>
+        <div class="button-container">
+            <a href="courseContentPhili.html" class="btn">Access Course Content</a>
+        </div>
+        
     </div>
 
-    <div class="container">
-        <p>Advanced strategies in Forex trading are essential for traders seeking to enhance their market performance and achieve consistent profitability. These strategies are built upon foundational trading knowledge and involve a deeper understanding of market dynamics, technical analysis, and risk management techniques. By employing advanced strategies, traders can exploit market inefficiencies, identify high-probability trading opportunities, and better manage their positions.</p>
         
-        <h3>1. Carry Trade Strategy</h3>
-        <p>Carry trading is a strategy where a trader borrows funds in a currency with a low-interest rate to invest in another currency with a higher rate. The goal is to profit from the interest rate differential between the two currencies.</p>
-        
-        <h3>2. Scalping Strategy</h3>
-        <p>Scalping involves making multiple small trades throughout the day to capture minor price movements. This requires sharp focus, quick decision-making, and a solid understanding of technical analysis.</p>
-        
-        <h3>3. Breakout Trading</h3>
-        <p>Breakout trading focuses on entering trades when the price moves outside a defined support or resistance level. A breakout signifies increased market volatility and the potential for substantial price movements.</p>
-        
-        <p>To proceed to part 2 of the course, click the link below:</p>
-        <a href="advanced-forex-trading-part2.html" class="btn btn-primary">Continue </a>
-    </div>
-    
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-               
+                
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+27 83 456 7897</p>
@@ -152,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-                
+                </div>
             </div>
         </div>
         <div class="container">
@@ -179,11 +174,10 @@
     </div>
     <!-- Footer End -->
 
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    
-    
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -195,7 +189,53 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+    
+        const questions = document.querySelectorAll('.question');
+        const correctAnswers = ['a', 'b', 'a', 'a', 'b'];
+    
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector(`input[name="q${currentQuestion + 1}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[currentQuestion]) {
+                score++;
+            }
+    
+            questions[currentQuestion].classList.remove('active');
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                questions[currentQuestion].classList.add('active');
+            }
+        }
+    
+        function showResult() {
+            const selectedAnswer = document.querySelector(`input[name="q${currentQuestion + 1}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[currentQuestion]) {
+                score++;
+            }
+    
+            questions[currentQuestion].classList.remove('active');
+            document.getElementById('score').textContent = score;
+            document.getElementById('result').style.display = 'block';
+    
+            if (score<3){
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Your score is: ' + score + ' out of 5 TRY AGAIN';}
+            else{var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Your score is: ' + score + ' out of 5 Well Done + ';
+            }
+    
+        }
+        
+        
+    </script>
+    <script>
+        document.getElementById('flex-shrink-0 btn btn-sm btn-primary px-3').addEventListener('click', function() {
+            window.location.href = 'Quiz.html'; // Replace 'anotherPage.html' with the URL of the page you want to navigate to
+        });
+    </script>
+
+    
 </body>
 </html>
-
-
